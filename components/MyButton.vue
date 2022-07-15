@@ -121,7 +121,7 @@ var props=defineProps(['type','size','disabled','round','plain','icon'])
         color: rgb(254,254,254);
     }   
 }
-.mybotton--lagre{
+.mybotton--large{
     padding: 18px 30px;
     font-size: 24px;
 }

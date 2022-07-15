@@ -14,7 +14,7 @@ import MySelect from './components/MySelect.vue'
 import MySwitch from './components/MySwitch.vue'
 import MyRadioGroup from './components/MyRadioGroup.vue'
 import MyMessage from './components/MyMessage.js'
-
+// https://blog.csdn.net/u010059669/article/details/109715342
 
 const components = [
     CheckBox,
