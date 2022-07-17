@@ -67,7 +67,7 @@ var changeshowPassword=function(){
     padding: 0 15px;
     background-color: white;
     color: #606266;
-    border: 1px solid rgb(245,247,250);
+    border: 1px solid rgba(166, 165, 165, 0.836);
     border-radius: 5px;
     outline: none;
     box-sizing: border-box;
