@@ -67,7 +67,7 @@ function add(){
     var value=model.value
     // value++
     value+=Number(props.step)
-    if(value>=props.min){
+    if(value>=props.max){
         value=props.max
     }
     console.log(value)
