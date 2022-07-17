@@ -15,7 +15,7 @@
         </span>
         <span class="inputclear" v-show="props.showwordlimit==''">
             <span class="inputcountinner">
-                {{model.length}}/{{props.showwordlimit}}
+                {{model.length}}/{{props.maxlength}}
             </span>
         </span>
     </div>
