@@ -65,7 +65,7 @@ var model=computed({
   padding: 12px 16px;
   border-radius: 4px;    
 }
-.myratio.myratio-lagre{
+.myratio.myratio-large{
     padding: 18px 24px;
     font-size: 21px;
 }
