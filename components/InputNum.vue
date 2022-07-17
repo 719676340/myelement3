@@ -1,14 +1,14 @@
 <template>
     <div class='inputnum'>
-        <div class="left" @click="reduce" :class="{'is-disabled':(model==props.min)}">-</div>
+        <div class="left" @click="reduce" :class="{'is-disabled':(model==props.min||props.disabled=='')}">-</div>
         <div class="mid">
-            <input class="midinput" :readonly="props.disable==''" :class="{'is-disabled':(props.disable=='')}"  type="text" v-model="model"
+            <input class="midinput" :readonly="props.disable==''" :class="{'is-disabled':(props.disabled=='')}"  type="text" v-model="model"
             @blur="props.onBlur"
             @focus="props.onFocus"
             @change="props.onChange"
             >
         </div>
-        <div class="right" @click="add" :class="{'is-disabled':(model==props.max)}">+</div>
+        <div class="right" @click="add" :class="{'is-disabled':(model==props.max||props.disabled=='')}">+</div>
     </div>
 </template>
 <script>
@@ -29,7 +29,7 @@ var props=defineProps({
         type: [String, Number],
         default: 1
     },
-    'disable':null,
+    'disabled':null,
     'min':[String, Number],
     'max':[String, Number],
     'onBlur':null,
@@ -44,10 +44,15 @@ var model=computed({
         return Number(value)
     },
     set(value){
-        emit('update:modelValue',Number(value).toFixed(props.precision)) 
+        if(!props.disabled){
+            emit('update:modelValue',Number(value).toFixed(props.precision))
+        } 
     }
 })
 function reduce(){
+    if(props.disabled==''){
+        return
+    }
     var value=model.value
     value-=props.step
     if(value<=props.min){
@@ -56,6 +61,9 @@ function reduce(){
     emit('update:modelValue',Number(value).toFixed(props.precision))
 }
 function add(){
+    if(props.disabled==''){
+        return
+    }
     var value=model.value
     // value++
     value+=Number(props.step)
