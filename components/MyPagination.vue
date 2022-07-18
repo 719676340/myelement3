@@ -102,7 +102,7 @@ function handlenext(){
     }
 }
 function handleprev(){
-    if(model.value>0){
+    if(model.value>1){
         model.value--
     }
 }
