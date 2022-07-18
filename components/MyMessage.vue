@@ -43,7 +43,7 @@ var props=defineProps(['type','message'])
     background-color: rgb(253,246,236);
     color: rgb(231,165,66);
 }
-.is-warning{
+.is-message{
     background-color: rgb(244,244,245);
     color: rgb(162,165,170);
 }
