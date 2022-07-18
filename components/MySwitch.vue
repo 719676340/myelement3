@@ -1,6 +1,6 @@
 <template>
     <div class='myswitch' :class="{
-        'is-disable':props.disable==''
+        'is-disabled':props.disabled==''
     }" @click="change()">
         <div class="activetext">{{props.activetext}}</div>
         <div class="switchinput" :class="[props.modelValue?'activecolor':'inactivecolor']" :style="{'background-color':props.modelValue?props.activecolor:props.inactivecolor}">
@@ -15,11 +15,11 @@ export default {
 }
 </script>
 <script setup>
-var props=defineProps(['modelValue','disable','activecolor','inactivecolor','activetext','inactivetext'])
+var props=defineProps(['modelValue','disabled','activecolor','inactivecolor','activetext','inactivetext'])
 var emit=defineEmits(['update:modelValue'])
 function change(){
     // console.log(!props.modelValue)
-    if(props.disable!=''){
+    if(props.disabled!=''){
         emit('update:modelValue',!props.modelValue)
     }
 }
@@ -34,7 +34,7 @@ function change(){
     -webkit-user-select: none;
     -ms-user-select: none;    
 }
-.is-disable{
+.is-disabled{
     opacity: 0.3;
 }
 .switchinput{
