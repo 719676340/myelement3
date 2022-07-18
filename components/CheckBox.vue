@@ -32,11 +32,13 @@ var change=inject('change')
 var group=inject('group')
 var model=computed({
     get(){
-        return group.value?group.value.indexOf(props.label)==-1?false:true:props.modelValue
+        // console.log(group?1:2)
+        return group?group.value.indexOf(props.label)==-1?false:true:props.modelValue
     },
     set(value){
         if(!props.disabled){
-            if(group.value){
+            if(group){
+                console.log(2222)
                 if(value){
                     change([...group.value,props.label])
                 }else{
@@ -45,6 +47,7 @@ var model=computed({
                     change(temp)
                 }
             }else{
+                console.log(1111)
                 emit('update:modelValue',value)
             }
             
